@@ -1,11 +1,17 @@
+<style>
+table, th {
+  border: 1px solid black;
+}
+</style>
+
 <h1>Articles Listing</h1>
 
 <table>
 	<thead>
 		<tr>
-			<th>Title</th>
-			<th>Description</th>
-			<th colspan="3">Actions</th>
+			<th><u>Title</u></th>
+			<th><u>Description</u></th>
+			<th colspan="3"><u>Actions</u></th>
 		</tr>
 	</thead>
 
@@ -13,7 +19,7 @@
 		<% @articles.each do |article| %>
 		<thead>
 			<tr>
-				<td><%= article.title %></td>
+				<td><i><%= article.title %></i></td>
 				<td><%= article.description %></td>
 				<td><%= link_to 'Edit',edit_article_path(article) %></td>
 				<td><%= link_to 'Show',article_path(article) %></td>
