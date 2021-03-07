@@ -1,0 +1,46 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+
+.navbar {
+  background-color: black !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#home-container {
+  margin-top: 55px;
+}
+
+.jumbotron {
+  background-image: asset-url('umberto-GQ4VBpgPzik-unsplash.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  background-image: linear-gradient(to right top, #675e63, #695e67, #695e6d, #665e73, #61607a, #5e6782, #5a6e8a, #557590, #588297, #608e9c, #6c9aa0, #7ba6a3);
+}
+  #sticky-footer {
+  flex-shrink: none;
+  height: 50px;
+} 
