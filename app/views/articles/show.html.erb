@@ -1,4 +1,4 @@
-<h1 align="center" class="mt-2">Showing Articles Details</h1>
+<h1 align="center" class="mt-2 text-white">Showing Articles Details</h1>
 	<div class="container">
 		
 			<div class="row justify-content-center">
@@ -14,9 +14,11 @@
 							<%= link_to 'Delete', article_path(@article),method: :delete, data: {confirm: "Are You Sure?"}, class: "btn btn-outline-danger" %>
 						</div>
 						<div class="card-footer text-muted">
-							<small><b>Created <%= time_ago_in_words(@article.created_at) %> ago, 
-							edited <%= time_ago_in_words(@article.updated_at) %> ago</b></small>
+							<small><b>Created: <%= time_ago_in_words(@article.created_at) %> ago</small>
+							<div>
+							<small><b>Edited: <%= time_ago_in_words(@article.updated_at) %> ago</small>
 						</div>
+							</div>
 					</div>
 				</div>
 			</diV>
