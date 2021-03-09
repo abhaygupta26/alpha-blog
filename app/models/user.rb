@@ -11,6 +11,8 @@ VALID_EMAIL_FORMAT = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
                        uniqueness: { case_sensitive: false },
                         length: { maximum: 105},
                          format: { with: VALID_EMAIL_FORMAT }
-
+  
   has_secure_password
+
+                         
 end
