@@ -1,0 +1,6 @@
+<h1 class="text-center mt-2 text-white">Welcome <%= @user.username %></h1>
+<% if @articles.empty? %>
+<h5>Sorry You Dont Have Articles</h5>
+<% else  %>
+<%= render 'articles/article' %>
+<% end %>
