@@ -1,0 +1,23 @@
+<h1 class="text-center mt-2 text-white">Aplha Bloggers</h1>
+<div class="container">
+		<% @user.each do |user| %>
+			<div class="row justify-content-center">
+				<div class="col-8 mt-4">
+					<div class="card text-center">
+						<div class="card-header text-muted">
+							<%= user.username %>
+						</div>
+						<div class="card-body">
+							<p class="card-text">You have <%= pluralize(user.articles.count, "article") %></p>
+							<%= link_to 'Edit Profile',edit_user_path(user), class: "btn btn-outline-info" %>
+							<%= link_to 'Show Profile',user_path(user),class: "btn btn-outline-success" %>
+						</div>
+						<div class="card-footer text-muted">
+							<small><b>Joined: <%= time_ago_in_words(user.created_at) %> ago</small>
+						</div>
+					</div>
+				</div>
+			</diV>
+		<% end %>
+	</div>
+

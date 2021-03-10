@@ -1,6 +1,7 @@
 <h1 class="text-center mt-2 text-white">Welcome <%= @user.username %></h1>
+<div align="center"><%= link_to "Edit Profile", edit_user_path, class: "btn btn-info"%></div>
 <% if @articles.empty? %>
-<h5>Sorry You Dont Have Articles</h5>
+<h5 class="text-center">Sorry! You Dont Have Articles</h5>
 <% else  %>
 <%= render 'articles/article' %>
 <% end %>
