@@ -8,7 +8,7 @@
 							<%= user.username %>
 						</div>
 						<div class="card-body">
-							<p class="card-text">You have <%= pluralize(user.articles.count, "article") %></p>
+							<p class="card-text"><%= user.username %> have <%= pluralize(user.articles.count, "article") %></p>
 							<%= link_to 'Edit Profile',edit_user_path(user), class: "btn btn-outline-info" %>
 							<%= link_to 'Show Profile',user_path(user),class: "btn btn-outline-success" %>
 						</div>
@@ -20,4 +20,8 @@
 			</diV>
 		<% end %>
 	</div>
+
+	<div class="flickr_pagination mb-2 mt-2">
+        <%= will_paginate @user, :container => false %>
+  </div>
 
