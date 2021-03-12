@@ -1,4 +1,9 @@
-<h1 class="text-center mt-2 text-white">Welcome <%= @user.username %></h1>
+<% if @user == current_user %>
+  <h1 class="text-center mt-2 text-white">Welcome <%= @user.username %></h1>
+	<% else %>
+		<h1 class="text-center mt-2 text-white"><%= @user.username %></h1>
+<% end %>
+
 <% if logged_in? && @user == current_user %>
 	<div align="center"><%= link_to "Edit Profile", edit_user_path, class: "btn btn-info"%></div>
 <% end %>
