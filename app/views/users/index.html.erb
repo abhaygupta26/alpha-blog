@@ -5,13 +5,18 @@
 				<div class="col-8 mt-4">
 					<div class="card text-center">
 						<div class="card-header text-muted">
+						<%= "(Admin)" if user.admin? %>
 							<%= link_to user.username, user %>
 						</div>
 						<div class="card-body">
 							<p class="card-text"><%= user.username %> have <%= pluralize(user.articles.count, "article") %></p>
-							<% if logged_in? && user == current_user %>
-								<%= link_to 'Edit Profile',edit_user_path(user), class: "btn btn-outline-info" %>
-								<%= link_to 'Show Profile',user_path(user),class: "btn btn-outline-success" %>
+							<% if logged_in? %>
+									<% if user == current_user %>
+										<%= link_to 'Edit Profile',edit_user_path(user), class: "btn btn-outline-info" %>
+									<% end %>
+									<% if current_user.admin? %>
+										<%= link_to 'Delete User',user_path(user), class: "btn btn-outline-danger", method: :delete %>
+									<% end %>
 							<% end %>
 						</div>
 						<div class="card-footer text-muted">
