@@ -2,6 +2,7 @@
   <h1 class="text-center mt-2 text-white">Welcome <%= @user.username %></h1>
 	<% else %>
 		<h1 class="text-center mt-2 text-white"><%= @user.username %></h1>
+		<%= gravatar_for @user, size: 200 %>
 <% end %>
 
 <% if logged_in? && @user == current_user %>
