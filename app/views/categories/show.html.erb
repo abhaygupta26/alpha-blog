@@ -1,0 +1,16 @@
+<h1 class="text-center mt-2 text-white">Category <%= @category.name %></h1>
+
+<% if logged_in? && current_user.admin? %>
+  <div align="center">
+    <%= link_to "Edit Category Name", edit_category_path, class: "btn btn-info"%>
+  </div>
+<% end %>
+<% if @articles.empty? %>
+    <h5 class="text-center">Sorry! You Dont Have Articles</h5>
+<% else  %>
+    <%= render 'articles/article' %>
+<% end %>
+
+<div class="flickr_pagination mb-2 mt-2">
+        <%= will_paginate @articles, :container => false %>
+</div>
